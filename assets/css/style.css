@@ -1,0 +1,39 @@
+
+@import url("header.css");
+@import url("cards.css");
+
+@font-face {
+    font-family: 'icones';
+    src: url(../font/icones.ttf);
+}
+
+:root {
+    --color-main-bg: #1D232A;
+    --color-header: #1D232A;
+    --color-header-mobile: #15191C;
+    --color-side-menu: #15191C;
+    --color-card: #2C343A;
+    --color-main-font: #FFFFFF;
+    --color-main-assets: #FFFFFF;
+    --color-secondary-assets:#95999C;
+    --color-font-disabled: #95999C;
+    --color-link: #0480DC;
+    --color-button: #0480DC;
+    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    --font-main: 'Open Sans','icones', sans-serif;
+}
+
+body {
+    background-color: var(--color-main-bg);
+    font-family: var(--font-main);
+    color: var(--color-main-font);
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+    
+    body {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+}

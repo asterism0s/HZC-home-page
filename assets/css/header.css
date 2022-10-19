@@ -1,0 +1,158 @@
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-header-mobile);
+    padding: 0.5rem 1rem;
+    box-shadow: var(--shadow);
+}
+
+.cabecalho__perfil {
+    display: none;
+}
+
+.cabecalho__menu i::before {
+    content: "\e904";
+    font-size: 1.5rem;
+}
+
+.cabecalho__notificacao i::before {
+    content: "\e906";
+    font-size: 1.5rem
+}
+
+.cabecalho__logo {
+    width: 2.5rem;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    height: 100vh;
+    background-color: var(--color-header-mobile);
+    
+    position: absolute;
+    left: -100vw;
+    transition: left .25s;
+}
+
+.menu-lateral--ativo {
+    left: 0;
+    transition: .25s;
+}
+
+.menu-lateral__logo {
+    width: 7.5rem;
+    align-self: center;
+    padding: 1rem;
+}
+
+.menu-lateral__link {
+    height: 4rem;
+    color: var(--color-font-disabled);
+    padding-left: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu-lateral__link--ativo:hover {
+    color: var(--color-main-font);
+    padding-left: 3.5rem;
+    border-left: 0.5rem solid var(--color-main-font);
+}
+
+
+.menu-lateral__link::before {
+    content: "\e900";
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+}
+
+.menu-lateral__link--inicio::before {
+    content: "\e902";
+}
+
+.menu-lateral__link--videos::before {
+    content: "\e90e";
+}
+
+.menu-lateral__link--picos::before {
+    content: "\e908";
+}
+
+.menu-lateral__link--integrantes::before {
+    content: "\e903";
+}
+
+.menu-lateral__link--camisas::before {
+    content: "\e900";
+}
+
+.menu-lateral__link--pinturas::before {
+    content: "\e90a";
+}
+
+
+
+@media screen and (min-width: 1440px) {
+
+    .cabecalho {
+        background-color: var(--color-header);
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: 1fr auto;
+        padding: 1rem 3.75rem;
+        height: 5rem;
+        box-sizing: border-box;
+        grid-column: 2;
+    }
+
+    .cabecalho__menu {
+        display: none;
+    }
+
+    .cabecalho__logo {
+        display: none;
+    }
+
+    .cabecalho__perfil {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 0.5rem;
+        align-items: center;
+        justify-self: flex-end;
+        color: var(--color-secondary-assets);
+        padding: 0.5rem 2rem;
+        border-right: 0.06rem solid var(--color-secondary-assets);
+    }
+
+    .cabecalho__perfil::before {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background-image: url(../img/profile_1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cabecalho__perfil::after {
+        content: "\e90d";
+        color: var(--color-main-assets);
+        font-size: 1.5rem;
+    }
+
+    .menu-lateral {
+        position: static;
+        width: 12.5rem;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+    
+}
